@@ -10,6 +10,7 @@ node {
     stage('Build images') {
         /* This builds the actual image; synonymous to
          * docker build on the command line. */
+             sh "hostname"
              echo "${env.BUILD_NUMBER}"
              sh 'docker build -t saiprasad169/website-test -f webpage .'
     }
