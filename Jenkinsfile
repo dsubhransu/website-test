@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line. */
              echo "${env.BUILD_NUMBER}"
-             sh 'docker build -t saiprasad169/website-test:${env.BUILD_NUMBER} -f webpage'
+             sh 'docker build -t saiprasad169/website-test:${env.BUILD_NUMBER} -f webpage .'
     }
     stage('Push Image') {
             docker.withRegistry('https://registry.hub.docker.com', 'f4fc89d0-de17-47ed-b9f4-ab5ebbe5cf39') {
